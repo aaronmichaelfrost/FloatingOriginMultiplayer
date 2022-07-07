@@ -2,22 +2,9 @@ Thank you for using twoloop's Floating Origin Ultimate!
 
 Please read the "FOU - Getting Started" pdf for a guide on how (and how not) to use this tool.
 
-Join Discord for more help - https://discord.gg/fcShgTSjJX
+Join Discord if you need help. Someone might be able to help you. - https://discord.gg/fcShgTSjJX
 
-- - - - - - - - - - - - - - - - - - - - - - -
-
-NEWLY ADDED:
-
-- Updated Getting Started pdf
-- Legacy Particle System support
-- TrailRenderer support
-- LineRenderer support
-- New FX demo scene
-- VFX Graph support
-- Realistic Car Controller support
-- Static OnOriginShiftEvent
-- Recenter frame timing setting
-- Disable colliders setting
+Contributions are appreciated. Also message me (twoloop) if you run into any bugs!
 
 - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -31,20 +18,29 @@ SINGLE PLAYER
 
 MULTIPLAYER
 
-Try out the Mirror example scene:
+Try out the Mirror example scene.
 
 First install the latest version of Mirror: 
 https://assetstore.unity.com/packages/tools/network/mirror-129321
 
-Precision modes for syncing offset: 
-float - 7 digits (32 bit)
-double - 15 digits (64 bit)
-decimal - 28 digits (128 bit)
-
 - - - - - - - - - - - - - - - - - - - - - - -
 
-Email us at twoloopgames@gmail.com
+FAQ:
 
-Please leave a review as well!
+How do I update stored world space positions?
 
-We are happy to help :)
+Create a new function to accept the translation updates:
+
+void OnShiftDetected(Vector3 newWorldOffset, Vector3 translation)
+{
+    // Do whatever you need with translation, usually add it to each world space Vector3 field in your class
+
+}
+
+
+Then register that function you just created in a new Awake() function, like so:
+
+void Awake()
+{
+    twoloop.FloatingOrigin.OnOriginShifted.AddListener(OnShiftDetected);
+}
