@@ -1,8 +1,6 @@
-Thank you for using twoloop's Floating Origin Ultimate!
+Thank you for using twoloop's Origin Shift! (formerly Floating Origin Ultimate / FOU)
 
 Please read the "FOU - Getting Started" pdf for a guide on how (and how not) to use this tool.
-
-Join Discord for more help - https://discord.gg/fcShgTSjJX
 
 - - - - - - - - - - - - - - - - - - - - - - -
 
